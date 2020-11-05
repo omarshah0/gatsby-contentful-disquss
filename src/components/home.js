@@ -13,7 +13,7 @@ function Home() {
           }
           thumbnail {
             fluid(toFormat: WEBP) {
-              src
+              ...GatsbyContentfulFluid
             }
           }
           author {

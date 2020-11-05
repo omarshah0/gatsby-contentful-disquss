@@ -18,7 +18,7 @@ export const query = graphql`
       cookTime
       thumbnail {
         fluid(toFormat: WEBP) {
-          src
+          ...GatsbyContentfulFluid
         }
         file {
           url
@@ -40,7 +40,7 @@ export const query = graphql`
         }
         image {
           fluid(toFormat: WEBP) {
-            src
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -110,12 +110,7 @@ function RecipeLayout({ data: { recipe } }) {
           </div>
         </div>
         <div className="recipe__image">
-          <Img
-            fluid={recipe.thumbnail.fluid}
-            alt={recipe.title}
-            fadeIn={true}
-            durationFadeIn={4000}
-          />
+          <Img fluid={recipe.thumbnail.fluid} alt={recipe.title} />
         </div>
       </div>
       {/* //////////////////////////////////// */}
